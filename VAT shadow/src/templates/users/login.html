@@ -7,7 +7,11 @@
     <title>Login page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'users/css/login.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Font+Name&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script src="{% static 'users/js/login.js' %}"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -30,18 +34,38 @@
                 <h3>Welcome to V-Guard</h3>
                 <form action="" method="post">
                     {% csrf_token %}
-                    <label for="id_username" class="label">Email Address*</label><br>
-                    <input type="text" name="username" id="id_username"><br>
+                    <div class="username">
+                        <label for="id_username" class="label">Email Address*</label><br>
+                    <input type="text" name="username" id="id_username" placeholder="Enter Email"><br>
+                    </div>
+                    <div class="validate_cred">
+                        <p>Please enter email</p>
+                    </div>
                   
-                    <label for="id_password" class="label">Password*</label><br>
-                    <input type="password" name="password" id="id_password">
+                    <div class="password">
+                        <label for="id_password" class="label">Password*</label><br>
+                        <input type="password" name="password" id="id_password" placeholder="Enter Password">
+                        <img class="pass_togg pass_toggle_hide" src="{% static 'users/images/Group 48095565.svg' %}" alt="" >
+                        <img class="pass_togg pass_toggle_show" id="pass_togg_visible" src="{% static 'users/images/Show.svg' %}" alt="">
+
+                    </div>
+                    <div class="validate_cred">
+                        <p>Please enter password</p>
+                    </div>
+
+
                     <div class="row ">
                         <div class="col offset-7" id="forgot_pw">
                             <a href="">Forgot Password?</a><br>
                         </div>
 
                     </div>
-                    <button type="submit">Login</button>
+                    <button id="login_btn" type="submit">Login</button>
+                    <div class="row validate">
+                        <div class="col align-self-center">
+                            <p>**Invalid Credentials**</p>
+                        </div>
+                    </div>
                 </form>
             </div>
            

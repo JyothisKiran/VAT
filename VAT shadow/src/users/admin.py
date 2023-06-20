@@ -8,4 +8,4 @@ from .models import User
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
     """ user admin """
-    ordering = ('email','u_name','password')
+    ordering = ('email','password')

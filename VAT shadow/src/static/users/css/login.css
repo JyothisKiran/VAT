@@ -2,14 +2,13 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'Inter';
-   font-family: sans-serif;
    background-color:rgb(245, 245, 245);
 }
 
 .col-6{
-    
+    margin-top: 20px;
     width: 461px;
-    height: 581px;
+    height: 591px;
     left: calc(50% - 461px/2 + 0.5px);
     top: 159px;
     background: #FFFFFF;
@@ -29,6 +28,7 @@ img{
 
 
 h3{
+    font-family: 'Inter';
     margin-top: 30px;
     text-align: left;
     font-weight: 700;
@@ -37,10 +37,28 @@ h3{
     color: #323C4D;
 }
 
+.password{
+    position: relative;
+    margin-top: -10px;
+}
+
+.pass_togg{
+    position: absolute;
+    width: 20px;
+height: 17px;
+left: 320.97px;
+top: 65.35px;
+}
+
+#pass_togg_visible{
+    display: none;
+}
+
 label{
-    margin-top:30px ;
+    
+    margin-top:20px ;
     text-align: left;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 14px;
     line-height: 156.5%;
     color: #141736;
@@ -48,6 +66,8 @@ label{
 }
 
 #id_username, #id_password{
+    font-family: 'Inter';
+    padding-left: 20px;
     width: 360px;
     box-sizing: border-box;
 background: #FAFBFC;
@@ -56,7 +76,8 @@ border-radius: 6px;
 height: 50px;
 }
 
-button{
+#login_btn{
+    border-style: none;
     margin-top: 20px;;
     color: #FFFFFF;
     width: 361px;
@@ -67,6 +88,13 @@ button{
     border-radius: 5px;
 }
 
+#login_btn:hover{
+    color: #F39200;
+    background: #FFFFFF;
+    border: 1px solid #F39200;
+}
+
+
 a{
     margin: 10px;
     text-decoration: none;
@@ -75,6 +103,22 @@ a{
     line-height: 156.5%;
     
     color: #F39200;
+}
+
+.validate_cred{
+    height: 18px;
+    color:red;
+    font-size:12px;
+}
+
+.validate_cred p{
+    display: none;
+}
+
+.validate{
+    color: red;
+    text-align: center;
+    display: none;
 }
 
 #forgot_pw{

@@ -6,6 +6,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.contrib.auth import authenticate,login
+from django.http import JsonResponse
 
 class UserLoginView(LoginView):
     redirect_authenticated_user = True
@@ -14,16 +15,17 @@ class UserLoginView(LoginView):
     next_page = 'success'
 
     def form_valid(self, form: UserLoginForm) -> HttpResponse:
-        email = form.cleaned_data('email')
-        password = form.cleaned_data('password')
+        email = form.cleaned_data['username']
+        password = form.cleaned_data['password']
         user = authenticate(username =email,password=password)
 
         if user is not None:
             login(self.request,user)
-            return super().form_valid(form)
+            return JsonResponse({'success': True})
         else:
             form.add_error("Invalid credentials. Please enter the correct details.")
-            return super().form_invalid(form)
+            return JsonResponse({'success': False, 'message': 'Invalid login credentials.'})
+
 
     
 class UserLoginSucessView(TemplateView):

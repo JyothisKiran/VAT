@@ -6,5 +6,5 @@ from .models import User
 
 class UserLoginForm(AuthenticationForm):
     model = User
-    fields = ['email', 'password']
+    fields = '__all__'
     
