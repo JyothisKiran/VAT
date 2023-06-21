@@ -1,0 +1,149 @@
+body{
+    padding :0px;
+    margin: 0px;
+    font-family: 'Inter';
+}
+
+.navbar{
+    padding-left: 29px;
+    padding-right: 21px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 90px;
+left: -1px;
+top: 0px;
+background: #FFFFFF;
+border-bottom: 1px solid rgba(223, 223, 223, 0.5);
+}
+
+.navbar-brand img{
+    width: 123px;
+height: 44.4px;
+}
+
+.navbar-nav{
+   display: flex;
+   gap:20px;
+}
+
+.nav-link .row{
+    font-family: 'Poppins';
+}
+
+.bubble{
+    
+box-sizing: border-box;
+width: 50px;
+height: 50px;
+/* left: 1261px;
+top: 20px; */
+
+border: 1px solid #E6EBF2;
+border-radius: 40px;
+}
+
+.profile_img{
+    width:200px;
+}
+
+#notification_img{
+    padding-top: 4px;
+    height: 28px;
+    
+}
+
+
+#username h6{
+    font-size: 12px;
+    font-weight: 700;
+}
+
+#role p{
+    font-size: 11px;
+    font-weight: 500;
+}
+
+
+.content-wrapper{
+
+}
+
+#collapse_btn{
+    border-style: none;
+    border-radius: 50%;
+    position: absolute;
+    width: 25px;
+height: 25px;
+left: 229px;
+top: 103px;
+}
+
+#collapse_btn img{
+    position: absolute;
+left: 29.84%;
+right: 80.53%;
+top: 24.35%;
+bottom: 86.15%;
+
+
+
+}
+
+.sidebar {
+    position: relative;
+    /* padding-top: 30px; */
+    width: 244px;
+    height:100% ;
+    border: 1px solid beige;
+}
+
+.toggle_btn{
+    position: absolute;
+    top: 10px;
+}
+
+
+.sidebar ul {
+    position: absolute;
+    top: 50px;
+    list-style: none;
+    padding: 0px;
+}
+
+.sidebar ul li{
+    padding: 10px;
+    /* width: 200px;
+    height: 45px; */
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.sidebar ul li:hover{
+    background: rgba(243, 146, 0, 0.12);
+    color: #F39200;
+}
+
+.sidebar ul a{
+    width: 200px;
+    height: 45px;
+    color:#828282;
+    text-decoration: none;
+}
+
+.list_item{
+
+    display: flex;
+    gap: 20px;
+}
+
+.collapse-contents{
+  /*  */
+}
+
+.contents{
+    background-color: antiquewhite;
+}
+
+
+
+
