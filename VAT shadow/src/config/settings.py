@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'core',
     'users',
     'contrib',
+    'asset_type',
 ]
 
 MIDDLEWARE = [

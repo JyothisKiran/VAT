@@ -1,0 +1,71 @@
+{% extends 'contrib/base.html' %}
+{% load static %}
+
+
+{% block extrahead %}
+    <title>Asset Type List</title>
+{% endblock extrahead %}
+
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'asset_type/css/list.css' %}">
+{% endblock extrastyle %}
+    
+
+{% block contents %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <p class="heading">Manage Asset Types</p>
+        </div>
+
+        <div class="row">
+            <div class="col searchdiv">
+                <img src="{% static 'asset_type/images/Search.svg' %}" alt="">
+                <form class="" role="search" method="get">
+                    <input class="search_bar" type="search" placeholder="              Search asset" aria-label="Search">
+                  </form>
+              
+            </div>
+
+            <div class="col justify-content-end addasset_div">
+                <button class="add_asset">
+                    <img src="{% static 'asset_type/images/Combined-Shape.svg' %}" alt="">
+                    <span> Add Asset </span>
+                   
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col tablediv">
+                <table class="table assettable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Type Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                      {% for items in object_list %}
+                        <tr>
+                            <td>{{items.type_name}}</td>
+                            <td>{{items.description}}</td>
+                            <td> edit</td>
+                        </tr>
+                      {% endfor %}
+                        
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+    
+    {% for items in object_list %}
+        <p>{{items.type_name}}</p>
+    {% endfor %}
+        
+{% endblock contents %}
+    

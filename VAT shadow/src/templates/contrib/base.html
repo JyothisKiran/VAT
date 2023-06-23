@@ -4,15 +4,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+
+    <!-- bootstrap cdn -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <!-- Jquery cdn -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    {% block extrahead %}
+    <title>Dashboard</title>
+    {% endblock extrahead %}
+    <script src="{% static 'contrib/js/base.js' %}"></script>
     <link rel="stylesheet" href="{% static 'contrib/css/base.css' %}" />
+    
+    {% block extrastyle %}
+      
+    {% endblock extrastyle %}
+      
+   
+    <!-- Google fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Inter"
       rel="stylesheet"
@@ -21,7 +35,7 @@
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
     />
-    <script src="{% static 'contrib/js/base.js' %}"></script>
+    
   </head>
   <body>
     <script
@@ -53,7 +67,7 @@
               <div class="row align-items-center" id="profileimg_div">
                 <img
                   class="profile_img"
-                  src="{% static 'contrib/images/Ellipse.svg' %}"
+                  src="{% static 'contrib/images/profile_Icon_SVG_gvqn3q.svg' %}"
                   alt=""
                 />
               </div>
@@ -62,7 +76,7 @@
 
           <li class="nav-item user_details">
             <a class="nav-link" href="#">
-              <div class="row" id="username"><h6>Avinash K P</h6></div>
+              <div class="row" id="username"><p>Avinash K P</p></div>
               <div class="row" id="role"><p>Admin</p></div>
             </a>
           </li>
@@ -70,8 +84,8 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="row">
+    <div class="container-fluid ">
+      <div class="row body-contents">
         <div class="col-3 sidebar">
           <div class="row toggle_btn align-items-center">
             <div class="col collapsebuttondiv">
@@ -83,7 +97,7 @@
           </div>
           <ul>
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -102,7 +116,7 @@
               </li></a
             >
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -121,7 +135,7 @@
               </li></a
             >
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -134,8 +148,10 @@
                 </div>
               </li></a
             >
-            <a href=""
-              ><li>
+            <div class="acordion">
+              <div class="acordion-name">
+                <button class="systemsettings_btn"
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -145,12 +161,22 @@
                   />
 
                   <img class="hover" src="{% static 'contrib/images/System-setting-yellow.svg' %}" alt="">
-                  </div><span class="collapse-content">System Settings</span>
+                  </div><span class="collapse-content">System Settings <img class="dropdown_arrow" src="{% static 'contrib/images/Arrow---Down-2.svg' %}" alt="">
+                  <img class="dropdown_arrowup" src="{% static 'contrib/images/Stroke-1.svg' %}" alt=""></span>
                 </div>
-              </li></a
+              </li></button
             >
+              </div>
+              <div class="acordion-list">
+                <ul>
+                  <a href=""><li>Manage Company</li></a>
+                  <a href=""><li>Manage Plant</li></a>
+                  <a href=""><li>Manage Asset Types</li></a>
+                </ul>
+              </div>
+            </div>
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -164,7 +190,7 @@
               </li></a
             >
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -178,7 +204,7 @@
               </li></a
             >
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -192,7 +218,7 @@
               </li></a
             >
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -206,7 +232,7 @@
               </li></a
             >
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -220,7 +246,7 @@
               </li></a
             >
             <a href=""
-              ><li>
+              ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
@@ -236,7 +262,15 @@
             >
           </ul>
         </div>
-        <div class="col contents"></div>
+        <div class="col contents">
+
+          
+          {% block contents %}
+            
+          {% endblock contents %}
+            
+
+        </div>
       </div>
     </div>
   </body>

@@ -122,8 +122,12 @@ a{
 }
 
 #forgot_pw{
-    margin-top: 10px;
+    margin-top: 10px; 
+    margin-left: 214px;
 }
 
+#forgot_pw a{
+    padding-left: 10px;
+}
 
 
