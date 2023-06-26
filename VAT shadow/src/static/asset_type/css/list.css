@@ -1,5 +1,9 @@
-.heading{
+.wrapper{
     font-family: 'Inter';
+}
+
+.heading{
+
     font-size: 20px;
     font-weight: 700;
 }
@@ -41,20 +45,66 @@
 }
 
 .tablediv{
-    padding-top: 10px;
+    margin-top:10px;
     border: 1px solid #F0F2F4;
     border-radius: 5px;
+    padding: 20px;
+    padding-top: 0px;
+    margin-left: 12px;
+    background-color: #ffff;
+}
+
+.assettable{
+    border-collapse:separate;
+    border-spacing:0 15px;
+}
+
+
+.assettable thead tr th{
+    color: #323C4D;
+    font-weight: 600;
+    font-size: 12px;
+    font-family: 'Inter';
+    border-style: none;
+    height: 20px;
     
 }
 
-.assettable thead{
-    background-color: none;
+.col1{
+    width: 200px;
 }
 
+
+
 .assettable tbody tr{
-    border-style: none;
+    height: 60px;
+   
+   
 }
 
 .assettable tbody tr td{
     background-color: #FAFBFC;
+    border-style: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #606C80;
+}
+
+.assettable tbody tr .col1data{
+    padding-left: 20px;
+}
+
+.assettable tbody tr .col2data{
+    padding-right:20px ;
+}
+
+.assettable tbody tr td ul{
+    list-style: none;
+    padding-left: 0px;
+    display: flex;
+    gap:23px ;
+}
+
+.assettable tbody tr td ul li{
+    float: left;
 }
