@@ -1,0 +1,48 @@
+{% extends 'contrib/base.html' %}
+{% load static %}
+
+
+
+    
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'asset_type/css/add.css' %}">
+{% endblock extrastyle %}
+    
+
+{% block contents %}
+
+<div class="container-fluid wrapper">
+    <div class="row">
+        <div class="col">
+            <p class="heading">Add Asset Type</p>
+        </div>
+    </div>
+
+    <div class="row form_row">
+        <div class="col form_div">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="formcontents">
+                    <label for="id_type_name">{{ form.type_name.label_tag }}</label><br>
+                    <input type="text" name="type_name" maxlength="255" required="" value="{{ form.instance.type_name }}" id="id_type_name" ><br>
+    
+                    <label class="label_description" for="id_description">{{ form.description.label_tag }}</label><br>
+                    <textarea name="description" maxlength="255" required="" id="id_description">{{ form.instance.description }}</textarea><br>
+                </div>
+                <div class="row justify-content-end" >
+                    <div class="col-3 submit_col">
+                        <button class="cancel_button" type="button" onclick="history.back()">Cancel</button>
+                        <button class="submit_button" type="submit">Update</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+    
+{% endblock contents %}
+    

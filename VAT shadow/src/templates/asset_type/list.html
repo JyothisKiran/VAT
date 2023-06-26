@@ -3,7 +3,14 @@
 
 
 {% block extrahead %}
-    <title>Asset Type List</title>
+
+    <script>
+        $(document).ready(function(){
+            $('#deleteasset').click(function(){
+                window.alert("Do you want to delete?")
+            })
+        })
+    </script>
 {% endblock extrahead %}
 
 
@@ -29,15 +36,15 @@
             </div>
 
             <div class="col justify-content-end addasset_div">
-                <button class="add_asset">
+                <a href="{% url 'add' %}"><button class="add_asset">
                     <img src="{% static 'asset_type/images/Combined-Shape.svg' %}" alt="">
                     <span> Add Asset </span>
                    
-                </button>
+                </button></a>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row tablerow">
             <div class="col tablediv">
                 <table class="table align-middle assettable">
                     <thead>
@@ -54,16 +61,20 @@
                             <td class="col1data" >{{items.type_name}}</td>
                             <td class="col2data">{{items.description}}</td>
                             <td> <ul>
-                                <a href=""><li><img src="{% static 'asset_type/images/Frame1.svg' %}" alt=""></li></a>
-                                <a href=""><li><img src="{% static 'asset_type/images/Edit.svg' %}" alt=""></li></a>
-                                <a href=""><li><img src="{% static 'asset_type/images/Frame.svg' %}" alt=""></li></a>
+                                <a href="{% url 'detail' items.pk %}"><li><img src="{% static 'asset_type/images/Frame1.svg' %}" alt=""></li></a>
+                                <a href="{% url 'update' items.pk %}"><li><img src="{% static 'asset_type/images/Edit.svg' %}" alt=""></li></a>
+                                <a href="#" id="deleteasset"><li><img src="{% static 'asset_type/images/Frame.svg' %}" alt=""></li></a>
                             </ul></td>
                         </tr>
+
                         
                       {% endfor %}
                         
                     </tbody>
                   </table>
+
+
+                  
             </div>
         </div>
     </div>

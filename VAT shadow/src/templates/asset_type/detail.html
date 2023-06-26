@@ -1,0 +1,36 @@
+{% extends 'contrib/base.html' %}
+{% load static %}
+
+    
+
+{% block extrastyle %}
+    <!-- <link rel="stylesheet" href="{% static 'asset_type/css/add.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'asset_type/css/detail.css' %}">
+{% endblock extrastyle %}
+    
+
+{% block contents %}
+
+<div class="container-fluid wrapper">
+    <div class="row">
+        <div class="col">
+            <p class="heading">Asset Type</p>
+        </div>
+    </div>
+
+    <div class="row form_row">
+        <div class="col form_div">
+                <div class="formcontents">
+                    <label for="id_type_name">Type Name</label><br>
+                    <input type="text" name="type_name" maxlength="255" required="" value="{{asset.type_name}}" id="id_type_name" placeholder="  Enter type name" disabled><br>
+    
+                    <label class="label_description" for="id_description">Description</label><br>
+                    <textarea name="description" maxlength="255" required="" id="id_description" placeholder="  Enter description" disabled>{{asset.description}}</textarea><br>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock contents %}
+    

@@ -1,13 +1,49 @@
 {% extends 'contrib/base.html' %}
 {% load static %}
 
+
 {% block extrahead %}
-<title>Add Asset Type</title>{% endblock extrahead %}
+    <script src="{% static 'asset_type/js/add.js' %}"></script>
+{% endblock extrahead %}
+    
 
 {% block extrastyle %}
+<link rel="stylesheet" href="{% static 'asset_type/css/add.css' %}">
 {% endblock extrastyle %}
 
 {% block contents %}
-{{form.as_p}}
+<div class="container-fluid wrapper">
+    <div class="row">
+        <div class="col">
+            <p class="heading">Add Asset Type</p>
+        </div>
+    </div>
+
+    <div class="row form_row">
+        <div class="col form_div">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="formcontents">
+                    <label for="id_type_name">Type Name</label><br>
+                    <input type="text" name="type_name" maxlength="255" required="" id="id_type_name" placeholder="Enter type name"><br>
+                    <div class="validate">
+                        <p id="typename_validate">Please enter a valid name</p>
+                    </div>
+                    <label class="label_description" for="id_description">Type Name</label><br>
+                    <textarea name="description" maxlength="255" required="" id="id_description" placeholder="Enter description"></textarea><br>
+                </div>
+                <div class="row justify-content-end" >
+                    <div class="col-3 submit_col">
+                        <button class="cancel_button" type="button">Cancel</button>
+                        <button class="submit_button" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
 
 {% endblock contents %}

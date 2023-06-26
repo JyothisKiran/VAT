@@ -1,0 +1,57 @@
+.wrapper{
+    font-family: 'Inter';
+}
+
+.heading{
+    margin-top:10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.form_row{
+    margin-top:10px;
+}
+
+
+
+.formcontents{
+    background-color: #ffff;
+    padding-top: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+label{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input, textarea{
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #EEEEEE;
+    margin-top:7px ;
+    padding-left: 19px;
+    color: #606C80;
+    
+}
+
+#id_type_name{
+    width:236px;
+    height: 45px;
+
+}
+
+.label_description{
+    margin-top: 37px;
+}
+
+#id_description{
+    resize: none;
+    height: 90px;
+    width: 100%;
+    
+}
+
