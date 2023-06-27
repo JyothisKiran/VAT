@@ -6,7 +6,7 @@
 
     <script>
         $(document).ready(function(){
-            $('#deleteasset').click(function(){
+            $('.deleteasset').click(function(){
                 window.alert("Do you want to delete?")
             })
         })
@@ -63,7 +63,7 @@
                             <td> <ul>
                                 <a href="{% url 'detail' items.pk %}"><li><img src="{% static 'asset_type/images/Frame1.svg' %}" alt=""></li></a>
                                 <a href="{% url 'update' items.pk %}"><li><img src="{% static 'asset_type/images/Edit.svg' %}" alt=""></li></a>
-                                <a href="#" id="deleteasset"><li><img src="{% static 'asset_type/images/Frame.svg' %}" alt=""></li></a>
+                                <a href="#" class="deleteasset"><li><img src="{% static 'asset_type/images/Frame.svg' %}" alt=""></li></a>
                             </ul></td>
                         </tr>
 

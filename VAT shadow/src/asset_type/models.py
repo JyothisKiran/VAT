@@ -5,4 +5,4 @@ from django.db import models
 
 class AssetType(BaseModel):
     type_name = models.CharField(max_length=255, default="", blank=False, null=False)
-    description = models.TextField(max_length=255)
+    description = models.TextField(max_length=255,blank=True,null=True)
