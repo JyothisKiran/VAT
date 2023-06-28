@@ -40,7 +40,7 @@ class UserManager(BaseUserManager):
 class User(AbstractUser):
     username = None
     email = models.EmailField(unique=True)
-    password = models.CharField(max_length=50)
+    password = models.CharField(max_length=150)
 
     objects = UserManager()
 

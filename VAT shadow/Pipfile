@@ -14,6 +14,8 @@ gunicorn = "*"
 ipython = "*"
 psycopg2 = "*"
 tzdata = "*"
+pandas = "*"
+mysqlclient = "*"
 
 [dev-packages]
 yapf = "*"

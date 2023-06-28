@@ -8,6 +8,7 @@ urlpatterns = [
     path('user/',include('users.urls')),
     path('contrib/',include('contrib.urls')),
     path('asset/',include('asset_type.urls')),
+    path('uploadasset/',include('upload_asset.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

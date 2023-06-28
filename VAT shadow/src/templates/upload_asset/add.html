@@ -1,0 +1,57 @@
+{% extends 'contrib/base.html' %} {% load static %} 
+
+
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'upload_asset/css/add.css' %}">
+{% endblock extrastyle %}
+    
+
+{% block contents %}
+<div class="container-fluid wrapper">
+  <div class="row">
+    <div class="col">
+      <p class="heading">Upload Asset Type</p>
+    </div>
+  </div>
+
+  <div class="row form_row">
+    <div class="col">
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="row formcontents">
+          <div class="col form-field">
+            <label for="{{ form.filename.id_for_label }}" class="form-label"
+              >File Name</label
+            >
+            <div class="form-input">{{ form.filename }}</div>
+          </div>
+          <div class="col form-field">
+            <label for="{{ form.start_date.id_for_label }}" class="form-label"
+              >Date Range</label
+            >
+            <div class="form-input">{{ form.start_date }}</div>
+          </div>
+          <div class="col form-field">
+            <label for="{{ form.end_date.id_for_label }}" class="form-label"
+              >End date</label
+            >
+            <div class="form-input">{{ form.end_date }}</div>
+          </div>
+          <div class="col form-field">
+            <label for="{{ form.file.id_for_label }}" class="form-label"
+              >File</label
+            >
+            <div class="form-input">{{ form.file }}</div>
+          </div>
+        </div>
+        <div class="row justify-content-end" >
+            <div class="col-3 submit_col">
+                <button class="cancel_button" type="button">Cancel</button>
+                <button class="submit_button" type="submit">Submit</button>
+            </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+ {% endblock contents %}
