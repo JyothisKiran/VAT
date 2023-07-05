@@ -25,12 +25,13 @@ $(document).ready(function(){
                 dataType : "json",
                 success: function (data){
                     if(data.success){
-                        alert("Successful");
-                        window.href.location = '';
+                        alert("Failed");
+                        window.href.location = '/asset/add/';
                     }
-                    // else{
-                    //     alert("error");
-                    // }
+                    else{
+                        alert("succesful");
+                        window.href.location = '/asset/add/';
+                    }
                 },
                 error : function(){
                         alert("form invalid");

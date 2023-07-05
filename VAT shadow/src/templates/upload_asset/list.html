@@ -1,19 +1,10 @@
-{% extends 'contrib/base.html' %} {% load static %} {% block extrahead %}
-
-<script>
-  $(document).ready(function () {
-    $(".deleteasset").click(function () {
-      window.alert("Do you want to delete?");
-    });
-  });
-</script>
-{% endblock extrahead %} {% block extrastyle %}
-<link rel="stylesheet" href="{% static 'asset_type/css/list.css' %}" />
+{% extends 'contrib/base.html' %} {% load static %} {% block extrastyle %}
+<link rel="stylesheet" href="{% static 'upload_asset/css/list.css' %}" />
 {% endblock extrastyle %} {% block contents %}
 
 <div class="container-fluid wrapper">
   <div class="row">
-    <p class="heading">Manage Asset Types</p>
+    <p class="heading">Fixed Asset Register</p>
   </div>
 
   <div class="row">
@@ -30,13 +21,13 @@
     </div>
 
     <div class="col justify-content-end addasset_div">
-      <a href="{% url 'assetadd' %}"
+      <a href="{% url 'assetdataupload' %}"
         ><button class="add_asset">
           <img
             src="{% static 'asset_type/images/Combined-Shape.svg' %}"
             alt=""
           />
-          <span> Add Asset </span>
+          <span> Upload Asset Data </span>
         </button></a
       >
     </div>
@@ -47,26 +38,26 @@
       <table class="table align-middle assettable">
         <thead>
           <tr>
-            <th class="col1" scope="col">Type Name</th>
-            <th class="col2" scope="col">Description</th>
+            <th class="col1" scope="col">File Name</th>
+            <th class="col2" scope="col">Date Range</th>
             <th class="col1" scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          {% for items in asset %}
+          {% for items in object_list %}
           <tr>
-            <td class="col1data">{{items.type_name}}</td>
-            <td class="col2data">{{items.description}}</td>
+            <td class="col1data">{{items.filename}}</td>
+            <td class="col2data">{{items.start_date}} - {{items.end_date}}</td>
             <td>
               <ul>
-                <a href="{% url 'assetdetail' items.pk %}"
+                <a href="{% url 'assetdatadetail' items.pk %}"
                   ><li>
                     <img
                       src="{% static 'asset_type/images/Frame1.svg' %}"
                       alt=""
                     /></li
                 ></a>
-                <a href="{% url 'assetupdate' items.pk %}"
+                <a href="{% url 'assetdataedit' items.pk %}"
                   ><li>
                     <img
                       src="{% static 'asset_type/images/Edit.svg' %}"

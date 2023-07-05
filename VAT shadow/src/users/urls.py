@@ -1,6 +1,6 @@
-from .views import UserLoginSucessView
-from .views import UserLoginView
 from django.urls import path
+
+from .views import UserLoginSucessView, UserLoginView
 
 urlpatterns = [
     path('success/',UserLoginSucessView.as_view(),name ='success'),

@@ -1,12 +1,13 @@
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.views import LoginView
-from django.http import HttpResponse
-from .forms import UserLoginForm
-from django.urls import reverse_lazy
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views.generic import TemplateView
-from django.contrib.auth import authenticate,login
-from django.http import JsonResponse
+
+from .forms import UserLoginForm
+
 
 class UserLoginView(LoginView):
     redirect_authenticated_user = True

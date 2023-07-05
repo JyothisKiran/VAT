@@ -14,18 +14,15 @@
     />
     <!-- Jquery cdn -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    
+
     {% block extrahead %}
     <title>Asset Tracker</title>
     {% endblock extrahead %}
     <script src="{% static 'contrib/js/base.js' %}"></script>
     <link rel="stylesheet" href="{% static 'contrib/css/base.css' %}" />
-    
-    {% block extrastyle %}
-      
-    {% endblock extrastyle %}
-      
-   
+
+    {% block extrastyle %} {% endblock extrastyle %}
+
     <!-- Google fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=Inter"
@@ -35,7 +32,6 @@
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
     />
-    
   </head>
   <body>
     <script
@@ -44,7 +40,10 @@
       crossorigin="anonymous"
     ></script>
     <nav class="navbar">
-      <div class="container-fluid align-items-center navbarContents" id="navbarContents">
+      <div
+        class="container-fluid align-items-center navbarContents"
+        id="navbarContents"
+      >
         <a class="navbar-brand" href="#"
           ><img src="{% static 'contrib/images/image 3.jpg' %}" alt=""
         /></a>
@@ -84,14 +83,22 @@
       </div>
     </nav>
 
-    <div class="container-fluid ">
+    <div class="container-fluid">
       <div class="row body-contents">
         <div class="col-3 sidebar">
           <div class="row toggle_btn align-items-center">
             <div class="col collapsebuttondiv">
               <button type="button" id="collapse_btn">
-                <img class="left_arrow" src="{% static 'contrib/images/Stroke-1.svg' %}" alt="" />
-                <img class="right_arrow" src="{% static 'contrib/images/Pagination-right-arrow.svg' %}" alt="">
+                <img
+                  class="left_arrow"
+                  src="{% static 'contrib/images/Stroke-1.svg' %}"
+                  alt=""
+                />
+                <img
+                  class="right_arrow"
+                  src="{% static 'contrib/images/Pagination-right-arrow.svg' %}"
+                  alt=""
+                />
               </button>
             </div>
           </div>
@@ -139,53 +146,79 @@
                 <div class="list_item">
                   <div class="icon-list">
                     <img
-                    class="normal"
-                    src="{% static 'contrib/images/Add-User1.svg' %}"
-                    alt=""
-                  />
-                  <img class="hover" src="{% static 'contrib/images/user-management-yellow.svg' %}" alt="">
-                  </div><span class="collapse-content">User Management</span>
+                      class="normal"
+                      src="{% static 'contrib/images/Add-User1.svg' %}"
+                      alt=""
+                    />
+                    <img
+                      class="hover"
+                      src="{% static 'contrib/images/user-management-yellow.svg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <span class="collapse-content">User Management</span>
                 </div>
               </li></a
             >
             <div class="acordion">
               <div class="acordion-name">
-                <button class="systemsettings_btn"
-              ><li class="sidebar_list">
-                <div class="list_item">
-                  <div class="icon-list">
-                    <img
-                    class="normal"
-                    src="{% static 'contrib/images/System-setting.svg' %}"
-                    alt=""
-                  />
+                <button class="systemsettings_btn">
+                  <li class="sidebar_list">
+                    <div class="list_item">
+                      <div class="icon-list">
+                        <img
+                          class="normal"
+                          src="{% static 'contrib/images/System-setting.svg' %}"
+                          alt=""
+                        />
 
-                  <img class="hover" src="{% static 'contrib/images/System-setting-yellow.svg' %}" alt="">
-                  </div><span class="collapse-content">System Settings <img class="dropdown_arrow" src="{% static 'contrib/images/Arrow---Down-2.svg' %}" alt="">
-                  <img class="dropdown_arrowup" src="{% static 'contrib/images/Stroke-1.svg' %}" alt=""></span>
-                </div>
-              </li></button
-            >
+                        <img
+                          class="hover"
+                          src="{% static 'contrib/images/System-setting-yellow.svg' %}"
+                          alt=""
+                        />
+                      </div>
+                      <span class="collapse-content"
+                        >System Settings
+                        <img
+                          class="dropdown_arrow"
+                          src="{% static 'contrib/images/Arrow---Down-2.svg' %}"
+                          alt="" />
+                        <img
+                          class="dropdown_arrowup"
+                          src="{% static 'contrib/images/Stroke-1.svg' %}"
+                          alt=""
+                      /></span>
+                    </div>
+                  </li>
+                </button>
               </div>
               <div class="acordion-list">
                 <ul>
                   <a href=""><li>Manage Company</li></a>
                   <a href=""><li>Manage Plant</li></a>
-                  <a href=""><li>Manage Asset Types</li></a>
+                  <a href="{% url 'assetlist' %}"
+                    ><li>Manage Asset Types</li></a
+                  >
                 </ul>
               </div>
             </div>
-            <a href=""
+            <a href="{% url 'assetdatalist' %}"
               ><li class="sidebar_list">
                 <div class="list_item">
                   <div class="icon-list">
                     <img
-                    class="normal"
-                    src="{% static 'contrib/images/Arrow---Up-Square.svg' %}"
-                    alt=""
-                  />
-                  <img class="hover" src="{% static 'contrib/images/Upload-asset-yellow.svg' %}" alt="">
-                  </div><span class="collapse-content">Upload Asset Data</span>
+                      class="normal"
+                      src="{% static 'contrib/images/Arrow---Up-Square.svg' %}"
+                      alt=""
+                    />
+                    <img
+                      class="hover"
+                      src="{% static 'contrib/images/Upload-asset-yellow.svg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <span class="collapse-content">Upload Asset Data</span>
                 </div>
               </li></a
             >
@@ -194,12 +227,17 @@
                 <div class="list_item">
                   <div class="icon-list">
                     <img
-                    class="normal"
-                    src="{% static 'contrib/images/Document.svg' %}"
-                    alt=""
-                  />
-                  <img class="hover" src="{% static 'contrib/images/Audit-task-yellow.svg' %}" alt="">
-                  </div><span class="collapse-content">Audit Tasks</span>
+                      class="normal"
+                      src="{% static 'contrib/images/Document.svg' %}"
+                      alt=""
+                    />
+                    <img
+                      class="hover"
+                      src="{% static 'contrib/images/Audit-task-yellow.svg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <span class="collapse-content">Audit Tasks</span>
                 </div>
               </li></a
             >
@@ -208,12 +246,17 @@
                 <div class="list_item">
                   <div class="icon-list">
                     <img
-                    class="normal"
-                    src="{% static 'contrib/images/Shield-Done.svg' %}"
-                    alt=""
-                  />
-                  <img class="hover" src="{% static 'contrib/images/Verification-yellow.svg' %}" alt="">
-                  </div><span class="collapse-content">Asset Verification</span>
+                      class="normal"
+                      src="{% static 'contrib/images/Shield-Done.svg' %}"
+                      alt=""
+                    />
+                    <img
+                      class="hover"
+                      src="{% static 'contrib/images/Verification-yellow.svg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <span class="collapse-content">Asset Verification</span>
                 </div>
               </li></a
             >
@@ -222,12 +265,17 @@
                 <div class="list_item">
                   <div class="icon-list">
                     <img
-                    class="normal"
-                    src="{% static 'contrib/images/Shield-Done.svg' %}"
-                    alt=""
-                  />
-                  <img class="hover" src="{% static 'contrib/images/Verification-yellow.svg' %}" alt="">
-                  </div><span class="collapse-content">Subsequent Verfication</span>
+                      class="normal"
+                      src="{% static 'contrib/images/Shield-Done.svg' %}"
+                      alt=""
+                    />
+                    <img
+                      class="hover"
+                      src="{% static 'contrib/images/Verification-yellow.svg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <span class="collapse-content">Subsequent Verfication</span>
                 </div>
               </li></a
             >
@@ -236,12 +284,17 @@
                 <div class="list_item">
                   <div class="icon-list">
                     <img
-                    class="normal"
-                    src="{% static 'contrib/images/Shield-Done.svg' %}"
-                    alt=""
-                  />
-                  <img class="hover" src="{% static 'contrib/images/Verification-yellow.svg' %}" alt="">
-                  </div><span class="collapse-content">Verfication Complete</span>
+                      class="normal"
+                      src="{% static 'contrib/images/Shield-Done.svg' %}"
+                      alt=""
+                    />
+                    <img
+                      class="hover"
+                      src="{% static 'contrib/images/Verification-yellow.svg' %}"
+                      alt=""
+                    />
+                  </div>
+                  <span class="collapse-content">Verfication Complete</span>
                 </div>
               </li></a
             >
@@ -250,11 +303,15 @@
                 <div class="list_item">
                   <div class="icon-list">
                     <img
-                  class="normal"
-                    src="{% static 'contrib/images/Report.svg' %}"
-                    alt=""
-                  />
-                  <img class="hover" src="{% static 'contrib/images/Report-yellow.svg' %}" alt="">
+                      class="normal"
+                      src="{% static 'contrib/images/Report.svg' %}"
+                      alt=""
+                    />
+                    <img
+                      class="hover"
+                      src="{% static 'contrib/images/Report-yellow.svg' %}"
+                      alt=""
+                    />
                   </div>
                   <span class="collapse-content">Reports</span>
                 </div>
@@ -263,13 +320,7 @@
           </ul>
         </div>
         <div class="col contents">
-
-          
-          {% block contents %}
-            
-          {% endblock contents %}
-            
-
+          {% block contents %} {% endblock contents %}
         </div>
       </div>
     </div>

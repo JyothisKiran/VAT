@@ -16,6 +16,8 @@ psycopg2 = "*"
 tzdata = "*"
 pandas = "*"
 mysqlclient = "*"
+yapf = "*"
+isort = "*"
 
 [dev-packages]
 yapf = "*"
