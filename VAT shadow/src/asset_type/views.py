@@ -24,18 +24,23 @@ class AssettypeCreateView(CreateView):
     form_class = AssettypeCreateForm
 
     def form_valid(self, form):
+
         # typename = self.request.POST.get('asset_type')
         typename = form.cleaned_data['type_name']
         if AssetType.objects.filter(type_name=typename).exists():
-            data = {'fail': True}
+            data = {'success': False}
             return JsonResponse(data)
         else:
             print('valid')
             self.object = form.save(commit=False)
-            self.object.asset_type = self.request.POST.get('asset_type')  # Make the asset_type field required
-            self.object.save()
-            data = {'success': True}
-            return JsonResponse(data)
+            self.object.asset_type = typename  # Make the asset_type field required
+            if typename:
+                self.object.save()
+                data = {'success': True}
+                return JsonResponse(data)
+            else:
+                data = {'success': False}
+                return JsonResponse(data)
         # print('not valid')
         # return super().form_valid(form)
 

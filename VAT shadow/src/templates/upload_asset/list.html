@@ -14,7 +14,7 @@
         <input
           class="search_bar"
           type="search"
-          placeholder="              Search asset"
+          placeholder="              Search"
           aria-label="Search"
         />
       </form>
@@ -46,8 +46,13 @@
         <tbody>
           {% for items in object_list %}
           <tr>
-            <td class="col1data">{{items.filename}}</td>
-            <td class="col2data">{{items.start_date}} - {{items.end_date}}</td>
+            <td class="col1data">
+              <img src="{% static 'upload_asset/images/Paper.svg' %}" alt="" />
+              {{items.filename}}
+            </td>
+            <td class="col2data">
+              {{items.start_date|date:'d/m/Y'}} - {{items.end_date}}
+            </td>
             <td>
               <ul>
                 <a href="{% url 'assetdatadetail' items.pk %}"

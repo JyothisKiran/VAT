@@ -31,18 +31,17 @@ $(document).ready(function(){
                     
                 // },
                 success : function(data){
-                    alert("fev");
+                    console.log("success block");
                     if(data.success){
-                        alert("Successful");
                         console.log('success')
                         window.location.href = '/asset/list/'
                     }
                     else if(data.fail){
-                        alert('Please enter another name');
+                        console.log('Please enter another name');
                         window.location.href = '/asset/add/'
                     }
                     else{
-                        alert("Error has occured");
+                        console.log("Error has occured");
                     }
                 },
                 error : function(){ 

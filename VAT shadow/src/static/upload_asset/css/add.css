@@ -13,15 +13,48 @@
 }
 
 .formcontents{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
     background-color: #ffff;
     border: 1px solid #F0F2F4;
     height: 141px;
     border-radius: 5px;
 }
 
-label{
+.formfields{
+    display: flex;
+    gap: 20px;
+}
+
+.label label{
+    padding-left: 0px;
     font-size: 12px;
     font-weight: 400;
+    color: #2B2B2B;
+}
+
+.form-input input{
+    font-size: 14px;
+    color: #606C80;
+    width: 200px;
+    height: 45px;
+    /* margin-left: 20px; */
+}
+
+.form-input input{
+    border: 1px solid #EEEEEE;
+}
+
+input[type="file"]{
+    position: relative;
+    color:#ffff;
+}
+
+input[type="file"]::file-selector-button{
+    border-style: none;
+    /* background: url('VAT shadow\src\static\upload_asset\images\Paper.svg'); */
+    width: 5px;
 }
 
 /* .form-input{
@@ -32,6 +65,17 @@ label{
     padding-left: 19px;
     color: #606C80;
 } */
+
+.filenamevalidation p, .startdatevalidation p, .enddatevalidation p, .fileinputvalidation p{
+    margin-top: 8px;
+    margin-left: 8px;
+    color:red;
+    font-size: 12px;
+    display: none;
+}
+
+
+
 
 .submit_col button{
     border:1px solid #F39200;
