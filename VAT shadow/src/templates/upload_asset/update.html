@@ -1,4 +1,6 @@
-{% extends 'contrib/base.html' %} {% load static %} {% block extrastyle %}
+{% extends 'contrib/base.html' %} {% load static %} {% block extrahead %}
+<script src="{% static 'upload_asset/js/update.js' %}"></script>
+{% endblock extrahead %} {% block extrastyle %}
 <link rel="stylesheet" href="{% static 'upload_asset/css/add.css' %}" />
 {% endblock extrastyle %} {% block contents %}
 <div class="container-fluid wrapper">
@@ -17,25 +19,44 @@
             <label for="{{ form.filename.id_for_label }}" class="form-label"
               >File Name</label
             >
-            <div class="form-input">{{ form.filename }}</div>
+            <div class="form-input">
+              <input
+                type="text"
+                name=""
+                id=""
+                value="{{ form.instance.filename }}"
+              />
+            </div>
           </div>
           <div class="col form-field">
             <label for="{{ form.start_date.id_for_label }}" class="form-label"
               >Date Range</label
             >
-            <div class="form-input">{{ form.start_date }}</div>
+            <div class="form-input">
+              <input
+                type="date"
+                value="{{ form.instance.start_date|date:'d/m/Y' }}"
+              />
+            </div>
           </div>
           <div class="col form-field">
             <label for="{{ form.end_date.id_for_label }}" class="form-label"
               >End date</label
             >
-            <div class="form-input">{{ form.end_date }}</div>
+            <div class="form-input">
+              <input
+                type="date"
+                value="{{ form.instance.end_date|date:'d/m/Y'}}"
+              />
+            </div>
           </div>
           <div class="col form-field">
             <label for="{{ form.file.id_for_label }}" class="form-label"
               >File</label
             >
-            <div class="form-input" disabled>{{ form.file }}</div>
+            <div class="form-input" disabled>
+              <input value="{{form.instance.file}}" disabled />
+            </div>
           </div>
         </div>
         <div class="row justify-content-end">
@@ -45,6 +66,7 @@
           </div>
         </div>
       </form>
+      {{form.instance.filename}}
     </div>
   </div>
 </div>

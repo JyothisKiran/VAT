@@ -6,7 +6,7 @@ from django.http import HttpRequest, HttpResponse, JsonResponse
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DetailView, ListView, UpdateView, TemplateView
 
-from .forms import AssetDataUploadForm
+from .forms import AssetDataUploadForm, AssetdataEditForm
 from .models import AssetData, DataModel
 
 # Create your views here.
@@ -89,8 +89,15 @@ class UploadassetList(ListView):
 
 class UploadassetEditView(UpdateView):
     model = AssetData
-    fields = '__all__'
+    # fields = '__all__'
     template_name = 'upload_asset/update.html'
+    form_class = AssetdataEditForm
+
+    # def get_context_data(self, **kwargs):
+    #     context = {}
+    #     form = self.get_object()
+    #     context['form'] = form
+    #     return context
 
 
 class UploadassetDetailView(DetailView):
