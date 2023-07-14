@@ -9,7 +9,7 @@ $(document).ready(function(){
         let type_name = $('#id_type_name').val().trim();
         let description = $('#id_description').val().trim();
         datas = {
-            'typename':type_name,
+            'type_name':type_name,
             'description':description,
             'csrfmiddlewaretoken' : $('input[name=csrfmiddlewaretoken]').val(),
         };

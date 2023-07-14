@@ -1,52 +1,50 @@
-{% extends 'contrib/base.html' %}
-{% load static %}
-
-
-
-    
-
-{% block extrastyle %}
-    <link rel="stylesheet" href="{% static 'asset_type/css/add.css' %}">
-    <script src="{% static 'asset_type/js/update.js' %}"></script>
-{% endblock extrastyle %}
-    
-
-{% block contents %}
+{% extends 'contrib/base.html' %} {% load static %} {% block extrastyle %}
+<link rel="stylesheet" href="{% static 'asset_type/css/add.css' %}" />
+<script src="{% static 'asset_type/js/update.js' %}"></script>
+{% endblock extrastyle %} {% block contents %}
 
 <div class="container-fluid wrapper">
-    <div class="row">
-        <div class="col">
-            <p class="heading">Add Asset Type</p>
-        </div>
+  <div class="row">
+    <div class="col">
+      <p class="heading">Add Asset Type</p>
     </div>
+  </div>
 
-    <div class="row form_row">
-        <div class="col form_div">
-            <form action="" method="post">
-                {% csrf_token %}
-                <div class="formcontents">
-                    <label for="id_type_name">{{ form.type_name.label_tag }}</label><br>
-                    <input type="text" name="type_name" maxlength="255" required="" value="{{ form.instance.type_name }}" id="id_type_name" ><br>
-                    
-                    <div class="validate">
-                        <p id="typename_validate">Please enter a valid name</p>
-                    </div>
-                    <label class="label_description" for="id_description">{{ form.description.label_tag }}</label><br>
-                    <textarea name="description" maxlength="255"  id="id_description">{{ form.instance.description }}</textarea><br>
-                </div>
-                <div class="row justify-content-end" >
-                    <div class="col-3 submit_col">
-                        <button class="cancel_button" type="button">Cancel</button>
-                        <button class="submit_button" type="submit">Update</button>
-                    </div>
-                </div>
-            </form>
+  <div class="row form_row">
+    <div class="col form_div">
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="formcontents">
+          <p id="asset_id" hidden>{{form.instance.id}}</p>
+          <label for="id_type_name">{{ form.type_name.label_tag }}</label><br />
+          <input
+            type="text"
+            name="type_name"
+            maxlength="255"
+            required=""
+            value="{{ form.instance.type_name }}"
+            id="id_type_name"
+          /><br />
 
+          <div class="validate">
+            <p id="typename_validate">Please enter a valid name</p>
+          </div>
+          <label class="label_description" for="id_description"
+            >{{ form.description.label_tag }}</label
+          ><br />
+          <textarea name="description" maxlength="255" id="id_description">
+{{ form.instance.description }}</textarea
+          ><br />
         </div>
+        <div class="row justify-content-end">
+          <div class="col-3 submit_col">
+            <button class="cancel_button" type="button">Cancel</button>
+            <button class="submit_button" type="submit">Update</button>
+          </div>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
 
-
-    
 {% endblock contents %}
-    

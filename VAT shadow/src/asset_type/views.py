@@ -24,11 +24,9 @@ class AssettypeCreateView(CreateView):
     form_class = AssettypeCreateForm
 
     def form_valid(self, form):
-
-        # typename = self.request.POST.get('asset_type')
         typename = form.cleaned_data['type_name']
         if AssetType.objects.filter(type_name=typename).exists():
-            data = {'success': False}
+            data = {'fail': True}
             return JsonResponse(data)
         else:
             print('valid')
@@ -40,9 +38,10 @@ class AssettypeCreateView(CreateView):
                 return JsonResponse(data)
             else:
                 data = {'success': False}
-                return JsonResponse(data)
-        # print('not valid')
-        # return super().form_valid(form)
+                return JsonResponse(data, safe=False)
+
+    def form_invalid(self, form):
+        return JsonResponse(form.errors.as_json(), safe=False)
 
 
 class AssettypeUpdateView(UpdateView):
@@ -51,14 +50,21 @@ class AssettypeUpdateView(UpdateView):
     template_name = 'asset_type/update.html'
 
     def form_valid(self, form):
+        print('valid')
         typename = form.cleaned_data['type_name']
-        if AssetType.objects.filter(type_name=typename).exists():
-            data = {'success': False}
-            return JsonResponse(data)
+        asset_id = AssetType.objects.get(type_name=typename)
+        if AssetType.objects.filter(type_name=typename).exists() and self.get_object():
+            print('exists')
+            data = {'success': False, 'id': asset_id.id}
+            return JsonResponse(data, safe=False)
         else:
             form.save(commit=True)
             data = {'success': True}
-            return JsonResponse(data)
+            return JsonResponse(data, safe=False)
+
+    def form_invalid(self, form):
+        print('invalid')
+        return JsonResponse(form.errors.as_json(), safe=False)
 
 
 class AssettypeDetailView(DetailView):
