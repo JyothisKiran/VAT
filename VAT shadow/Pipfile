@@ -18,6 +18,7 @@ pandas = "*"
 mysqlclient = "*"
 yapf = "*"
 isort = "*"
+openpyxl = "*"
 
 [dev-packages]
 yapf = "*"

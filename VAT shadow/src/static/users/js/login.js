@@ -21,6 +21,9 @@
 
 $(document).ready(function() {
     // Handle form submission
+    $("#forgot_pw a").click(function(){
+        window.location.href = `/user/forgotpw/`
+    })
     $("form").submit(function(event) {
         event.preventDefault(); // Prevent the default form submission
         var username = $("#id_username").val();

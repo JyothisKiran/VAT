@@ -10,6 +10,7 @@ urlpatterns = [
     path('asset/', include('asset_type.urls')),
     path('uploadasset/', include('upload_asset.urls')),
     path('roles/', include('roles.urls')),
+    path('company/', include('company.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

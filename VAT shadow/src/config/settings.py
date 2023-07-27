@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'asset_type',
     'upload_asset',
     'roles',
+    'company',
 ]
 
 MIDDLEWARE = [

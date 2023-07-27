@@ -11,14 +11,20 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="{% static 'users/css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'users/css/forgotpw.css' %}" />
     <link
       href="https://fonts.googleapis.com/css?family=Inter"
       rel="stylesheet"
     />
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-    <script src="{% static 'users/js/login.js' %}"></script>
+    <script>
+      $(document).ready(function () {
+        $("#login_btn").click(function () {
+          window.location.href = `/user/login/`;
+        });
+      });
+    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   </head>
   <body>
@@ -44,9 +50,11 @@
           <h3>Welcome to V-Guard</h3>
           <form action="" method="post">
             {% csrf_token %}
+            <div class="text-forgotpw">
+              Please enter your registered email ID to get the password link
+            </div>
             <div class="username">
-              <label for="id_username" class="label">Email Address*</label
-              ><br />
+              <label for="id_username" class="label">Email </label><br />
               <input
                 type="text"
                 name="username"
@@ -58,41 +66,13 @@
               <p>Please enter email</p>
             </div>
 
-            <div class="password">
-              <label for="id_password" class="label">Password*</label><br />
-              <input
-                type="password"
-                name="password"
-                id="id_password"
-                placeholder="Enter Password"
-              />
-              <img
-                class="pass_togg pass_toggle_hide"
-                src="{% static 'users/images/Group 48095565.svg' %}"
-                alt=""
-              />
-              <img
-                class="pass_togg pass_toggle_show"
-                id="pass_togg_visible"
-                src="{% static 'users/images/Show.svg' %}"
-                alt=""
-              />
-            </div>
-            <div class="validate_cred">
-              <p>Please enter password</p>
-            </div>
-
-            <div class="row">
-              <div class="col offset-6" id="forgot_pw">
-                <a href="/user/forgotpw/">Forgot Password?</a><br />
-              </div>
-            </div>
-            <button id="login_btn" type="submit">Login</button>
+            <button id="otp__btn" type="submit">Get OTP</button>
             <div class="row validate">
               <div class="col align-self-center">
                 <p>**Invalid Credentials**</p>
               </div>
             </div>
+            <button id="login_btn" type="button">Back to login</button>
           </form>
         </div>
       </div>

@@ -1,0 +1,180 @@
+{% extends 'contrib/base.html' %} {% load static %} {% block extrahead %}
+<script src="{% static 'roles/js/add.js' %}"></script>
+{% endblock extrahead %} {% block extrastyle %}
+<link rel="stylesheet" href="{% static 'roles/css/add.css' %}" />
+{% endblock extrastyle %} {% block contents %}
+<div class="container-fluid wrapper">
+  <div class="row">
+    <div class="col">
+      <p class="heading">Add Role</p>
+    </div>
+  </div>
+
+  <div class="row role_form">
+    <div class="col">
+      <form action="" method="post">
+        {% csrf_token %}
+        <div class="formcontents">
+          <div class="row firstrow">
+            <div class="col-4">
+              <div class="row">
+                <label for="id_role_name">Role name:</label>
+              </div>
+
+              <input
+                type="text"
+                name="role_name"
+                placeholder="Type role name"
+                maxlength="100"
+                required
+                id="id_role_name"
+              />
+            </div>
+
+            <div class="col">
+              <label>Role type:</label>
+
+              <div id="id_role_type">
+                <div>
+                  <label for="id_role_type_0"
+                    ><input
+                      type="radio"
+                      name="role_type"
+                      value="Admin"
+                      required
+                      id="id_role_type_0"
+                    />
+                    Admin</label
+                  >
+                </div>
+                <div>
+                  <label for="id_role_type_1"
+                    ><input
+                      type="radio"
+                      name="role_type"
+                      value="Auditor"
+                      required
+                      id="id_role_type_1"
+                    />
+                    Auditor</label
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row secondrow">
+            <label for="id_description">Description:</label>
+
+            <textarea
+              name="description"
+              cols="40"
+              rows="10"
+              placeholder="Type description"
+              maxlength="200"
+              required
+              id="id_description"
+            ></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <br />
+  <div class="row">
+    <div class="col">
+      <p class="heading">Permission Details</p>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="formcontents">
+          {% for perm in obj %} {% if perm.name == "Verify Asset Task" %}
+          <div class="row perm_row">
+            <p>
+              <input type="checkbox" name="" id="id_checkbox_perm" /> {{perm}}
+            </p>
+          </div>
+          <br />
+          {% elif perm.name == 'Initial Data Upload Access' %}
+          <div class="row perm_row">
+            <p>
+              <input type="checkbox" name="" id="id_checkbox_perm" /> {{perm}}
+            </p>
+          </div>
+          <br />
+          {% elif perm.name == "Report Access" %}
+          <div class="row perm_row">
+            <p>
+              <input
+                type="checkbox"
+                name=""
+                class="{{perm.id}}"
+                id="id_checkbox_perm"
+              />
+              {{perm}}
+            </p>
+          </div>
+          <br />
+          {% else %}
+          <div class="row perm_row checkbox_row" id="{{perm.id}}">
+            <div class="col">
+              <p>
+                <input
+                  type="checkbox"
+                  class="id_checkbox_perm"
+                  name=""
+                  id="id_checkbox_perm{{perm.id}}"
+                />
+                {{perm}}
+              </p>
+            </div>
+            <div class="col checkbox_row" id="checkbox_row">
+              <div class="div">
+                <input
+                  type="checkbox"
+                  name="view"
+                  class="id_checkbox_view"
+                  id="view{{perm.id}}"
+                />
+                <label for="id_checkbox_view">View</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="add"
+                  class="id_checkbox_add"
+                  id="add{{perm.id}}"
+                />
+                <label for="id_checkbox_add">Add</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="edit"
+                  class="id_checkbox_edit"
+                  id="edit{{perm.id}}"
+                />
+                <label for="id_checkbox_edit">Edit</label>
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  name="delete"
+                  class="id_checkbox_delete"
+                  id="delete{{perm.id}}"
+                />
+                <label for="id_checkbox_delete">Delete</label>
+              </div>
+            </div>
+          </div>
+          <br />
+          {% endif %} {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock contents %}

@@ -26,6 +26,7 @@ class AssettypeCreateView(CreateView):
     def form_valid(self, form):
         typename = form.cleaned_data['type_name']
         if AssetType.objects.filter(type_name=typename).exists():
+            print('exists')
             data = {'fail': True}
             return JsonResponse(data)
         else:

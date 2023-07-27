@@ -1,0 +1,93 @@
+.wrapper{
+    font-family: 'Inter';
+}
+
+.heading{
+    margin-top:10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.role_form{
+    margin-top:10px;
+}
+
+.formcontents{
+    background-color: #ffff;
+    padding-top: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+}
+
+.perm_row{
+    height: 60px;
+    width: 100%;
+    background-color: #FAFBFC;
+    border-radius: 4px;
+    padding-top: 15px;
+}
+
+.perm_row input{
+    margin-right: 10px;
+}
+
+.checkbox_row{
+    display: flex;
+    gap: 55px;
+}
+
+input, textarea{
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #EEEEEE;
+    margin-top:7px ;
+    padding-left: 19px;
+    color: #606C80;
+}
+
+#id_role_type div label{
+    font-size: 14px;
+    font-weight: 400;
+    color: #606C80;
+}
+
+#id_role_type_0, #id_role_type_1{
+    border: 1px solid #F39200;
+    accent-color: #F39200;
+    
+}
+
+label{
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+#id_role_name{
+    width:236px;
+    height: 45px;
+}
+
+#id_role_type{
+    display: flex;
+    gap: 30px;
+}
+
+
+#id_description{
+    padding-top: 14px;
+    padding-left: 22px;
+    resize: none;
+    height: 90px;
+    width: 98%;
+}
+
+.secondrow{
+    margin-top: 20px;
+}
+
+.secondrow textarea{
+    margin-left: 10px;
+}

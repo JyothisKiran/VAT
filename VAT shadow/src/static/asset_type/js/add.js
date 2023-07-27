@@ -37,8 +37,8 @@ $(document).ready(function(){
                         window.location.href = '/asset/list/'
                     }
                     else if(data.fail){
-                        console.log('Please enter another name');
                         window.location.href = '/asset/add/'
+                        alert('Please enter another name');
                     }
                     else{
                         console.log("Error has occured");

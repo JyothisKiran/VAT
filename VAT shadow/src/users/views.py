@@ -31,3 +31,7 @@ class UserLoginView(LoginView):
     
 class UserLoginSucessView(TemplateView):
     template_name = 'users/success.html'
+
+
+class ForgotPasswordView(TemplateView):
+    template_name = 'users/forgotpw.html'
