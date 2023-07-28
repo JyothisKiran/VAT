@@ -18,53 +18,53 @@
           <div class="col form-field">
             <div class="row label">
               <label
-                for="{{ form.company_name.id_for_label }}"
+                for="{{ form.instance.company_name.id_for_label }}"
                 class="form-label"
                 >Company Name</label
               >
             </div>
             <div class="row form-input company_name">
-              {{ form.company_name }}
+              <input type="text" value="{{ form.instance.company_name }}" />
             </div>
             <div class="row filenamevalidation"><p>Enter a valid name</p></div>
           </div>
           <div class="col form-field">
             <div class="row label">
               <label
-                for="{{ form.company_code.id_for_label }}"
+                for="{{ form.instance.company_code.id_for_label }}"
                 class="form-label"
                 >Company Code</label
               >
             </div>
             <div class="row form-input company_code">
-              {{ form.company_code }}
+              <input type="text" value="{{ form.instance.company_code }}" />
             </div>
             <div class="row startdatevalidation"><p>Enter valid code</p></div>
           </div>
           <div class="col form-field">
             <div class="row label">
               <label
-                for="{{ form.contact_person.id_for_label }}"
+                for="{{ form.instance.contact_person.id_for_label }}"
                 class="form-label"
                 >Contact Person</label
               >
             </div>
             <div class="row form-input contact_person">
-              {{ form.contact_person }}
+              <input type="text" value="{{ form.instance.contact_person }}" />
             </div>
             <div class="row enddatevalidation"><p>Enter a valid date</p></div>
           </div>
           <div class="col form-field">
             <div class="row label">
               <label
-                for="{{ form.phone_number.id_for_label }}"
+                for="{{ form.instance.phone_number.id_for_label }}"
                 class="form-label"
                 >Phone Number</label
               >
             </div>
 
             <div class="row form-input phone_number" id="file_input">
-              {{ form.phone_number }}
+              <input type="text" value="{{ form.instance.phone_number }}" />
             </div>
             <div class="row fileinputvalidation">
               <p>Enter a phone number</p>
@@ -74,11 +74,15 @@
         <div class="formfields2">
           <div class="col form-field">
             <div class="row label">
-              <label for="{{ form.email.id_for_label }}" class="form-label"
+              <label
+                for="{{ form.instance.email.id_for_label }}"
+                class="form-label"
                 >Email</label
               >
             </div>
-            <div class="row form-input email">{{ form.email }}</div>
+            <div class="row form-input email">
+              <input type="text" value="{{ form.instance.email }}" />
+            </div>
             <div class="row filenamevalidation"><p>Enter a valid name</p></div>
           </div>
         </div>

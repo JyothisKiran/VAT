@@ -1,0 +1,117 @@
+.wrapper{
+    font-family: 'Inter';
+}
+
+.heading{
+    margin-top:10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.form_row{
+    margin-top: 10px;
+}
+
+.formcontents{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    background-color: #ffff;
+    border: 1px solid #F0F2F4;
+    height: 206px;
+    border-radius: 5px;
+}
+
+.formfields{
+    display: flex;
+    gap: 20px;
+}
+
+.formfields2{
+    margin-top: 20px;
+}
+
+.label label{
+    padding-left: 0px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #2B2B2B;
+}
+
+.form-input input{
+    font-size: 14px;
+    color: #606C80;
+    width: 200px;
+    height: 45px;
+    /* margin-left: 20px; */
+}
+
+.form-input input{
+    border: 1px solid #EEEEEE;
+}
+
+input[type="file"]{
+    position: relative;
+    color:#ffff;
+}
+
+input[type="file"]::file-selector-button{
+    border-style: none;
+    /* background: url('VAT shadow\src\static\upload_asset\images\Paper.svg'); */
+    /* display: none; */
+}
+
+/* .form-input{
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #EEEEEE;
+    margin-top:7px ;
+    padding-left: 19px;
+    color: #606C80;
+} */
+
+.filenamevalidation p, .startdatevalidation p, .enddatevalidation p, .fileinputvalidation p{
+    margin-top: 8px;
+    margin-left: 8px;
+    color:red;
+    font-size: 12px;
+    display: none;
+}
+
+
+
+
+.submit_col button{
+    border:1px solid #F39200;
+    width: 141px;
+    height: 45px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+
+.submit_col{
+    padding-left: 20px;
+    padding-top: 20px;
+   display: flex;
+   gap: 20px;
+}
+
+
+.submit_button{
+    background-color: #F39200;
+    color:#ffff; 
+}
+
+.submit_button:hover{
+
+}
+
+.cancel_button{
+    background-color: #ffff;
+    color: #F39200;
+}
+
+.cancel_button:hover{
+
+}

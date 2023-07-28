@@ -1,0 +1,88 @@
+{% extends 'contrib/base.html' %} {% load static %} {% block extrahead %}
+<script src="{% static 'company/js/add.js' %}"></script>
+{% endblock extrahead %} {% block extrastyle %}
+<link rel="stylesheet" href="{% static 'company/css/add.css' %}" />
+{% endblock extrastyle %} {% block contents %}
+<div class="container-fluid wrapper">
+  <div class="row">
+    <div class="col">
+      <p class="heading">{{company.company_name}}</p>
+    </div>
+  </div>
+
+  <div class="row form_row">
+    {% csrf_token %}
+    <div class="formcontents">
+      <div class="row formfields">
+        <div class="col form-field">
+          <div class="row label">
+            <label for="{{ form.company_name.id_for_label }}" class="form-label"
+              >Company Name</label
+            >
+          </div>
+          <div class="row form-input company_name">
+            {{ company.company_name }}
+          </div>
+          <div class="row filenamevalidation"><p>Enter a valid name</p></div>
+        </div>
+        <div class="col form-field">
+          <div class="row label">
+            <label for="{{ form.company_code.id_for_label }}" class="form-label"
+              >Company Code</label
+            >
+          </div>
+          <div class="row form-input company_code">
+            {{ company.company_code }}
+          </div>
+          <div class="row startdatevalidation"><p>Enter valid code</p></div>
+        </div>
+        <div class="col form-field">
+          <div class="row label">
+            <label
+              for="{{ form.contact_person.id_for_label }}"
+              class="form-label"
+              >Contact Person</label
+            >
+          </div>
+          <div class="row form-input contact_person">
+            {{ company.contact_person }}
+          </div>
+          <div class="row enddatevalidation"><p>Enter a valid date</p></div>
+        </div>
+        <div class="col form-field">
+          <div class="row label">
+            <label for="{{ form.phone_number.id_for_label }}" class="form-label"
+              >Phone Number</label
+            >
+          </div>
+
+          <div class="row form-input phone_number" id="file_input">
+            {{ company.phone_number }}
+          </div>
+          <div class="row fileinputvalidation">
+            <p>Enter a phone number</p>
+          </div>
+        </div>
+      </div>
+      <div class="formfields2">
+        <div class="col form-field">
+          <div class="row label">
+            <label for="{{ form.email.id_for_label }}" class="form-label"
+              >Email</label
+            >
+          </div>
+          <div class="row form-input email">{{ company.email }}</div>
+          <div class="row filenamevalidation"><p>Enter a valid name</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-end">
+      <div class="col-3 submit_col">
+        <button class="cancel_button" type="button">Cancel</button>
+        <button class="submit_button" type="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock contents %}
